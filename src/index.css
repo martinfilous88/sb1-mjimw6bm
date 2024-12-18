@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .gaming-gradient {
+    background: linear-gradient(
+      135deg,
+      theme('colors.blue.900') 0%,
+      theme('colors.purple.900') 50%,
+      theme('colors.indigo.900') 100%
+    );
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(theme('colors.purple.400/0.15') 1px, transparent 1px),
+      linear-gradient(90deg, theme('colors.purple.400/0.15') 1px, transparent 1px);
+    background-size: 32px 32px;
+    min-height: 100vh;
+    backdrop-filter: blur(3px);
+  }
+
+  .text-glow {
+    text-shadow: 
+      0 0 10px theme('colors.purple.400/0.8'),
+      0 0 20px theme('colors.blue.400/0.4');
+  }
+
+  .neon-border {
+    box-shadow: 
+      0 0 5px theme('colors.purple.400/0.5'),
+      0 0 10px theme('colors.blue.400/0.5'),
+      inset 0 0 5px theme('colors.purple.400/0.5'),
+      inset 0 0 10px theme('colors.blue.400/0.5');
+  }
+
+  .hover-glow:hover {
+    box-shadow: 
+      0 0 15px theme('colors.purple.400/0.8'),
+      0 0 30px theme('colors.blue.400/0.6');
+    transform: translateY(-2px);
+  }
+}
+
+@layer base {
+  body {
+    @apply text-gray-100;
+    background: theme('colors.gray.900');
+  }
+
+  input::placeholder {
+    @apply text-gray-400;
+  }
+
+  input:focus {
+    @apply outline-none ring-2 ring-purple-500;
+  }
+}
